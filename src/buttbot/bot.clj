@@ -19,6 +19,6 @@
         remaining (->> (words)
                        (drop-while (partial not= current-word))
                        count)]
-    (chime-at (take remaining (periodic-seq (now) (-> 30 minutes)))
+    (chime-at (take remaining (periodic-seq (now) (-> 10 minutes)))
               (fn [_]
                 (tweet-next-word!)))))

@@ -12,7 +12,7 @@
   (let [last-tweeted-word (slurp *current-word-file*)
         word (next-word last-tweeted-word)]
     (spit *current-word-file* word)
-    (tweet (concat-butts word))))
+    (tweet (doto (concat-butts word) (println)))))
 
 (defn -main []
   (let [current-word (slurp *current-word-file*)
